@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>¿Dónde Está la Pupusa? - A Salvadoran Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>¿Dónde Está la Pupusa?</h1>
+      <h2>A Salvadoran Memory Game</h2>
+    </header>
+
+    <main>
+      <section id="instructions">
+        <h3>How to Play</h3>
+        <p>
+          Click on a card to flip it. Try to find matching pairs of Salvadoran
+          icons. If the cards match, they will stay face up. If they do not
+          match, they will flip back down. Match all pairs to win.
+        </p>
+      </section>
+
+      <section id="game-container">
+        <div id="message">
+          Haz clic en una carta para empezar.
+        </div>
+
+        <div id="board">
+          <!-- Cards will be rendered here by JavaScript -->
+        </div>
+
+        <button id="play-again" type="button">
+          Play Again
+        </button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Created by Edith Alejandra Leiva</p>
+    </footer>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
