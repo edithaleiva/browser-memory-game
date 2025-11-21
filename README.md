@@ -3,8 +3,8 @@
 A browser-based memory game inspired by Salvadoran culture.  
 Flip cards, find matching pairs, and win before the 2-minute timer runs out.
 
-## Game Preview
-/Users/user/code/ga/labs/browser-memory-game/browser-memory-game/images/game-screenshot.png
+##<img width="1316" height="901" alt="game-screenshot2" src="https://github.com/user-attachments/assets/24df97b3-4073-4342-8ff9-ec21cc13abc1" />
+ Game Preview
 
 
 ## How to Play
