@@ -4,6 +4,9 @@ A funny, nostalgic browser-based memory game inspired by Salvadoran food, cultur
 
 Match pairs of pupusas, horchata, elote loco, and other Salvadoran icons — all while enjoying playful phrases after each move.
 
+## Preview
+<img width="1316" height="901" alt="game-screenshot2" src="https://github.com/user-attachments/assets/5bc23aea-fba1-419b-87a6-d72edd0d5153" />
+
 ---
 
 ## Play the Game
