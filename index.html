@@ -2,46 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>¿Dónde Está la Pupusa? - A Salvadoran Memory Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donde Esta la Pupusa?</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-      <h1>¿Dónde Está la Pupusa?</h1>
-      <h2>A Salvadoran Memory Game</h2>
-    </header>
-
-    <main>
+    <main class="layout">
+      <!-- LEFT: Instructions -->
       <section id="instructions">
-        <h3>How to Play</h3>
+        <img 
+  src="./images/pupusa-header.png" 
+  alt="Pupusa illustration" 
+  class="instructions-img"
+/>
+        <h2>How to Play</h2>
+
         <p>
-          Click on a card to flip it. Try to find matching pairs of Salvadoran
-          icons. If the cards match, they will stay face up. If they do not
-          match, they will flip back down. Match all pairs to win.
+          Welcome to this little Salvi-style memory game! You’ll find
+          <strong>24 cards</strong> inspired by our cultura — from pupusas and
+          atol shuco to the torogoz and maquilishuat.
+        </p>
+
+        <p>
+          Your mission is simple: <strong>find all 12 matching pairs</strong>
+          hidden on the board.
+        </p>
+
+        <p>Flip two cards at a time:</p>
+
+        <p>
+          If they match → <em>¡Eso cipote/cipota, good job!</em><br />
+          If not → <em>púchica… almost</em>, try again.
+        </p>
+
+        <p>
+          No stress here — just vibes and fun. Every flip helps you remember
+          where everything is hiding.
+        </p>
+
+        <p>
+          When you’re ready, hit <strong>Play Again</strong>. The timer (coming
+          soon) is just for fun, so play at your own pace.
         </p>
       </section>
 
-      <section id="game-container">
-        <div id="message">
-          Haz clic en una carta para empezar.
-        </div>
+      <!-- RIGHT: Game Panel -->
+      <section id="game-panel">
 
-        <div id="board">
-          <!-- Cards will be rendered here by JavaScript -->
-        </div>
+  <p id="message" class="game-message">
+  Haz clic en una carta para empezar.
+</p>
 
-        <button id="play-again" type="button">
-          Play Again
-        </button>
-      </section>
+
+  <div id="game-header">
+    <div class="stat">
+      Total Guessed:
+      <span id="guessed-count">0</span>/<span id="total-pairs">12</span>
+    </div>
+    <div class="stat">
+      Timer:
+      <span id="timer">00:00</span>
+    </div>
+  </div>
+
+  <div id="board"></div>
+
+  <button id="play-again" type="button">Play Again</button>
+
+</section>
+
     </main>
-
-    <footer>
-      <p>Created by Edith Alejandra Leiva</p>
-    </footer>
-
     <script src="./data.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
+
