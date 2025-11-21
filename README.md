@@ -1,58 +1,81 @@
 # Dónde Está la Pupusa? – Browser Memory Game
 
-A browser-based memory game inspired by Salvadoran culture.  
-Flip cards, find matching pairs, and win before the 2-minute timer runs out.
+A funny, nostalgic browser-based memory game inspired by Salvadoran food, culture, and childhood humor.  
 
-##<img width="1316" height="901" alt="game-screenshot2" src="https://github.com/user-attachments/assets/24df97b3-4073-4342-8ff9-ec21cc13abc1" />
- Game Preview
+Match pairs of pupusas, horchata, elote loco, and other Salvadoran icons — all while enjoying playful phrases after each move.
 
+---
 
-## How to Play
-- The board contains 24 cards (12 pairs), all face down.
-- Click on a card to flip it, then click a second card to try to find its match.
-- If the cards match, they remain face up.
-- If not, they flip back after a short delay.
-- The timer starts automatically when you flip your first card.
-- Your goal is to match all 12 pairs before the time limit.
+## Play the Game
+Live Demo:  
+https://edithaleiva.github.io/browser-memory-game/
 
-## Win and Lose Conditions
-**You win if:**
-- You match all 12 pairs before the timer reaches 2 minutes.
+---
 
-**You lose if:**
-- The timer reaches 120 seconds, and the board automatically locks.
+## Project Planning
+All planning docs, pseudocode, user stories, requirements, and theme development:
 
-**After a win or loss:**
-- A final message appears at the top of the game panel.
-- The board stops accepting clicks.
-- The “Play Again” button is displayed.
+Planning Document:  
+https://github.com/edithaleiva/browser-memory-game/blob/main/planning.md
 
-## Features
-- Custom Salvadoran-inspired card artwork (pupusas, maquilishuat, torogoz, tamales, etc.).
-- Fully dynamic board built and updated with JavaScript.
-- Timer that triggers a lose state at 2 minutes.
-- Match counter that updates with every successful pair.
-- Random Spanglish messages for matches and mismatches.
-- Prevents fast-clicking bugs using a board-lock system.
-- Responsive two-column layout using Flexbox.
+---
 
-## Technologies Used
-### Development Tools
-- HTML  
-- CSS  
-- JavaScript (DOM manipulation, rendering, state management)
+## GitHub Repository
+https://github.com/edithaleiva/browser-memory-game
 
-### Design Tools
-- Adobe Illustrator – created custom card artwork  
-- Figma – UI planning and layout exploration  
-- Adobe Express – asset resizing and export optimization
+---
 
-### Version Control & Deployment
-- Git  
-- GitHub  
-- GitHub Pages for hosting
+## Game Description
+"¿Dónde Está la Pupusa?" is a lighthearted memory game where users flip cards to find matching pairs. Each match or mismatch includes a playful Salvadoran phrase such as:
 
-## Project Structure
+- “Púchica, buena suerte.”
+- “Ya casi, bichita/o.”
+- “Vaya pues, encontraste un par.”
+
+The game is designed to be fun, culturally familiar, and charming.
+
+---
+
+## User Stories
+
+### Landing & Instructions
+- As a user, I want to see a landing screen that clearly explains the game.
+- As a user, I want clear instructions so I know what to do.
+
+### Gameplay
+- As a user, I want to see all cards face down at the start.
+- As a user, I want to click cards to flip them.
+- As a user, I want mismatched cards to flip back down.
+- As a user, I want matched cards to stay revealed.
+- As a user, I want feedback after each choice.
+
+### Humor and Nostalgia
+- As a user, I want Salvadoran phrases to appear after each match or mismatch.
+
+### Winning and Restart
+- As a user, I want a celebration or message when all pairs are found.
+- As a user, I want an easy “Play Again” button.
+
+---
+
+## Core Game Logic (Pseudocode Overview)
+
+Key steps include:
+
+1. Duplicate and shuffle card deck  
+2. Track flipped and matched cards  
+3. Lock board during animations  
+4. Display random match or mismatch phrases  
+5. Render card front or back depending on state  
+6. Trigger win screen when all pairs are matched  
+7. Reset the game with `init()`  
+
+Full pseudocode is available in the planning document.
+
+---
+
+## Directory Structure
+
 ```
 browser-memory-game/
 │

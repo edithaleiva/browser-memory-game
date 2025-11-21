@@ -24,6 +24,13 @@ let secondsElapsed = 0;
 let timerInterval = null;
 let hasGameStarted = false;
 
+// How long the player has to win (in seconds)------------------------------------------WIN
+const MAX_SECONDS = 120;
+
+// Message shown when the player loses--------------------------------------------------LOSE
+const LOSE_MESSAGE = 'Time is up. You ran out of time. Click "Play Again" to try again.';
+
+
 /*------------------------ Cached Element References ------------------------*/
 
 const boardEl = document.getElementById('board');
@@ -122,7 +129,7 @@ function render() {
   guessedCountEl.textContent = matchedPairs;
   totalPairsEl.textContent = BASE_CARDS.length;
 
-  // ---- WIN CHECK ----
+  // ---- WIN CHECK --------------------------------------------------------------------
   const totalPairs = BASE_CARDS.length;
   if (matchedPairs === totalPairs) {
     isGameOver = true;
@@ -142,35 +149,31 @@ function render() {
 }
 
 function handleBoardClick(event) {
-  // Find the nearest .card element, even if the img was clicked
-  const cardEl = event.target.closest('.card');
+  if (isGameOver) return; // stop if you won or lost
 
-  // If the click wasn't on a card at all, do nothing
+  const cardEl = event.target.closest('.card');
   if (!cardEl) return;
 
-  // If the board is locked (waiting for mismatch timeout), do nothing
   if (isBoardLocked) return;
 
-  // Find the card in the deck using the data-id
+  // Find the card object
   const cardId = cardEl.dataset.id;
-  const clickedCard = deck.find((card) => card.id === cardId);
-
+  const clickedCard = deck.find(card => card.id === cardId);
   if (!clickedCard) return;
 
-  // Ignore if card already flipped or matched
+  // Ignore already flipped or matched cards
   if (clickedCard.flipped || clickedCard.matched) return;
 
-  // Flip the clicked card
+  // Flip the card
   clickedCard.flipped = true;
 
-  //Start timer on first flip
   // Start timer on the very first flip
   if (!hasGameStarted) {
     hasGameStarted = true;
     startTimer();
   }
 
-  // If this is the first selection
+  // First selection
   if (!firstSelectedCard) {
     firstSelectedCard = clickedCard;
     currentMessage = 'Elegí otra carta para ver si hace juego.';
@@ -178,14 +181,15 @@ function handleBoardClick(event) {
     return;
   }
 
-  // Otherwise, this is the second selection
+  // Second selection
   secondSelectedCard = clickedCard;
-  isBoardLocked = true; // lock the board while checking
+  isBoardLocked = true;
   render();
 
-  // Check for match
+  // Check if they match
   checkForMatch();
 }
+
 
 // Compare the two selected cards and handle match / mismatch
 function checkForMatch() {
@@ -246,7 +250,6 @@ function getRandomItem(arr) {
   return arr[index];
 }
 
-// Timer helpers
 function updateTimerDisplay() {
   const minutes = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
   const seconds = String(secondsElapsed % 60).padStart(2, '0');
@@ -258,6 +261,24 @@ function startTimer() {
   timerInterval = setInterval(() => {
     secondsElapsed++;
     updateTimerDisplay();
+
+    // Check lose condition: time ran out
+    if (!isGameOver && secondsElapsed >= MAX_SECONDS) {
+      isGameOver = true;
+      currentMessage = LOSE_MESSAGE;
+
+      clearInterval(timerInterval);
+      timerInterval = null;
+
+      // Prevent further clicking
+      isBoardLocked = true;
+
+      // Show the Play Again button
+      playAgainBtn.style.display = 'inline-block';
+
+      // Re-render to show final message
+      render();
+    }
   }, 1000);
 }
 
@@ -268,6 +289,7 @@ function resetTimer() {
   hasGameStarted = false;
   updateTimerDisplay();
 }
+
 
 /*----------------------------- Start the Game ------------------------------*/
 

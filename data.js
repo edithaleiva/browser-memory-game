@@ -67,19 +67,19 @@ const BASE_CARDS = [
 // Funny phrases when the player finds a match
 const MATCH_MESSAGES = [
   'Eso cipote/cipota, good job.',
-  'Vaya pues, encontraste un par.',
-  'Púchica, qué suerte la tuya.',
-  'Ahí va agarrando ritmo la cosa.',
+  'Yay, encontraste un par.',
+  'Púchica, Lucky you!.',
+  'YUP, Ahí va agarrando ritmo la cosa.',
 ];
 
 // Funny phrases when the player misses
 const MISMATCH_MESSAGES = [
   'Casi, casi… try again.',
-  'Ni modo, así es la vida.',
+  'Oh well, así es la vida.',
   'Te faltó un poquito, cipote/cipota.',
   'Esa no era. Probá otra vez.',
 ];
 
 // Win message
 const WIN_MESSAGE =
-  'Ganaste. Ya encontraste todas las parejitas y recuerdos Salvi.';
+  'Ganaste!!! YOU WON!!';
