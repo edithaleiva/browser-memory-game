@@ -3,7 +3,10 @@
 A browser-based memory game inspired by Salvadoran culture.  
 Flip cards, find matching pairs, and win before the 2-minute timer runs out.
 
-![Game Screenshot](./images/screenshot.png)
+## Game Preview
+
+![Game Screenshot](./images/game-screenshot.png)
+
 
 ## How to Play
 - The board contains 24 cards (12 pairs), all face down.
